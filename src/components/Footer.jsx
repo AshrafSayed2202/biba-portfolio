@@ -2,7 +2,9 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <section>Footer</section>
+        <section className='content-contain mt-[100px]'>
+            Footer
+        </section>
     )
 }
 
