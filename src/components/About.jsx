@@ -1,9 +1,11 @@
 import React from 'react'
 import Header from '../ui/Header'
+import web from '../assests/images/web.png'
 
 const About = () => {
     return (
         <section className='content-contain mt-[100px]'>
+            <img src={web} alt="web" className='absolute rotate-180 left-0 bottom-0 z-[-1]' />
             <Header title={"About Me"} />
             <div className='flex gap-5 mt-[80px]'>
                 <div className='flex flex-col gap-8'>
