@@ -4,7 +4,7 @@ import avatar from '../assests/images/footerAvatar.png'
 import MainBtn from '../ui/MainBtn'
 const Footer = () => {
     return (
-        <section className='content-contain mt-[100px]'>
+        <section className='content-contain pt-[100px]'>
             <div className='p-[100px] filter-blur-2 rounded-[24px] relative overflow-hidden flex gap-5 max-w-[1200px] mx-auto mb-[60px]'>
                 <img src={bg} alt="bg" className='absolute left-0 top-0 z-[-1] rounded-[24px] h-full object-cover' />
                 <div className='absolute left-0 top-0 z-[-1] rounded-[24px] size-full object-cover shadow-[0_0_28px_2px_rgba(255,255,255,0.20)_inset]' />

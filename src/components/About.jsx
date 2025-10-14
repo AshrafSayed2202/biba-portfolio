@@ -1,12 +1,15 @@
 import React from 'react'
 import Header from '../ui/Header'
 import web from '../assests/images/web.png'
-
+import avatar from '../assests/images/AboutAvatar.png'
 const About = () => {
     return (
-        <section className='content-contain mt-[100px]'>
+        <section className='content-contain pt-[100px]'>
             <img src={web} alt="web" className='absolute rotate-180 left-0 bottom-0 z-[-1]' />
-            <Header title={"About Me"} />
+            <div className='flex items-center justify-center'>
+                <Header title={"About Me"} />
+                <img src={avatar} alt="avatar" className='w-[112px]' />
+            </div>
             <div className='flex gap-5 mt-[80px]'>
                 <div className='flex flex-col gap-8'>
                     <h3 className='text-[50px] font-[500] leading-[55px]'>

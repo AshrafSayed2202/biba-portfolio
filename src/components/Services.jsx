@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../ui/Header'
 import ServiceCard from '../ui/ServiceCard'
+import avatar from '../assests/images/ServicesAvatar.png'
 
 const Services = () => {
     return (
@@ -14,7 +15,8 @@ const Services = () => {
                 <p className='text-[20px] font-[400] leading-[27px] max-w-[800px] mx-auto opacity-80 text-center'>
                     Curious how I'll help your business thrive online? Here's a peek at my creative toolkit. From sleek websites to standout apps, I've got all your UX/UI needs covered."
                 </p>
-                <div className='mt-[40px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-[80px]'>
+                <div className='mt-[40px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-[80px] relative'>
+                    <img src={avatar} alt="avatar" className='absolute top-0 left-0 translate-y-[-100%] w-[112px]' />
                     <ServiceCard title="UI design" description="Visually stunning, intuitive interfaces that captivate users and elevate your brand identity." />
                     <ServiceCard title="UX design" description="User-focused experiences shaped by thoughtful research and proven methodologies." />
                     <ServiceCard title="UX research" description="Deep user insights and validation that drive smarter, user-friendly design decisions." />
