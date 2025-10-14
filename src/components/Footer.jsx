@@ -1,9 +1,29 @@
 import React from 'react'
-
+import bg from '../assests/images/footerbg.jpg'
+import avatar from '../assests/images/footerAvatar.png'
+import MainBtn from '../ui/MainBtn'
 const Footer = () => {
     return (
         <section className='content-contain mt-[100px]'>
-            Footer
+            <div className='p-[100px] filter-blur-2 rounded-[24px] relative overflow-hidden flex gap-5 max-w-[1200px] mx-auto mb-[60px]'>
+                <img src={bg} alt="bg" className='absolute left-0 top-0 z-[-1] rounded-[24px] h-full object-cover' />
+                <div className='absolute left-0 top-0 z-[-1] rounded-[24px] size-full object-cover shadow-[0_0_28px_2px_rgba(255,255,255,0.20)_inset]' />
+                <div className='flex flex-col gap-6'>
+                    <h1 className='font-bold text-[58px] leading-[70px]'>Ready to bring your dream project to life?</h1>
+                    <p className='text-[24px]'>Let's transform your ideas into stunning reality. Contact me today, and let's build something remarkable together</p>
+                    <MainBtn text="let's talk" handler={() => { }} classNames={'text-[18px] font-bold max-w-[280px]'} />
+                </div>
+                <div>
+                    <img src={avatar} alt="avatar" className='min-w-[380px]' />
+                </div>
+            </div>
+            <div className='max-w-[1200px] mx-auto py-4 px-10 text-[#626262] flex justify-between items-center '>
+                <span>Habiba© 2025 .All Rights Reserved</span>
+                <div className='flex items-center gap-5 font-bold'>
+                    <a href="" className='hover:text-[#1A91B9] duration-300'>LinkedIn</a>
+                    <a href="" className='hover:text-[#1A91B9] duration-300'>Behance</a>
+                </div>
+            </div>
         </section>
     )
 }

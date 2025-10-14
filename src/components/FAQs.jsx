@@ -31,36 +31,36 @@ const FAQs = () => {
             answer: 'Due to the high-quality nature of the work, there will be no refunds issued.',
         },
     ];
-
     return (
-        <section className='content-contain mt-[100px] !overflow-visible max-h-screen'>
-            <Header title={'Frequently Asked Questions'} />
-            <h3 className='text-[42px] font-[500] leading-[42px] text-center mb-[15px]'>
-                Your Top <span>Questions</span> answered.
-            </h3>
-            <p className='text-[16px] font-[400] text-[#C4C4C4] text-center mb-[30px]'>
-                Got questions before kicking things off? I've got you covered.
-            </p>
-            <div className='flex flex-col gap-4 mx-auto relative'>
-                <span className='absolute w-[50%] h-[50%] rounded-full bg-[#41a4c57e] blur-[200px] top-[50%] left-[75%] translate-x-[-50%] translate-y-[-50%] z-[-1]' />
-
-                {faqs.map((faq, index) => (
-                    <button key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
-                        <div
-                            className='flex justify-between items-center w-full text-left'
-                        >
-                            <span className='text-[18px] font-[500]'>{faq.question}</span>
-                            <span className='text-[24px] font-[300]'>
-                                {activeIndex === index ? '-' : '+'}
-                            </span>
-                        </div>
-                        {activeIndex === index && (
-                            <div className='pb-4 text-[16px] font-[400] text-[#ffffffcc] text-left mt-[28px]'>
-                                {faq.answer}
+        <section className='bg-[#020F15] w-screen flex justify-center !overflow-visible max-h-screen'>
+            <div className='content-contain py-[100px]'>
+                <Header title={'Frequently Asked Questions'} />
+                <h3 className='text-[42px] font-[500] leading-[42px] text-center mb-[15px]'>
+                    Your Top <span>Questions</span> answered.
+                </h3>
+                <p className='text-[16px] font-[400] text-[#C4C4C4] text-center mb-[30px]'>
+                    Got questions before kicking things off? I've got you covered.
+                </p>
+                <div className='flex flex-col gap-4 mx-auto relative max-w-[1200px]'>
+                    <span className='absolute w-[50%] h-[50%] rounded-full bg-[#41a4c57e] blur-[200px] top-[50%] left-[75%] translate-x-[-50%] translate-y-[-50%] z-[-1]' />
+                    {faqs.map((faq, index) => (
+                        <button key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
+                            <div
+                                className='flex justify-between items-center w-full text-left'
+                            >
+                                <span className='text-[18px] font-[500]'>{faq.question}</span>
+                                <span className='text-[24px] font-[300]'>
+                                    {activeIndex === index ? '-' : '+'}
+                                </span>
                             </div>
-                        )}
-                    </button>
-                ))}
+                            {activeIndex === index && (
+                                <div className='pb-4 text-[16px] font-[400] text-[#ffffffcc] text-left mt-[28px]'>
+                                    {faq.answer}
+                                </div>
+                            )}
+                        </button>
+                    ))}
+                </div>
             </div>
         </section>
     );
