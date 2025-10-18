@@ -9,11 +9,14 @@ import FAQs from "./components/FAQs"
 import Footer from "./components/Footer"
 import ReactFullpage from '@fullpage/react-fullpage';
 import 'fullpage.js/dist/fullpage.css';
+import { useState } from "react"
+import ContactModal from "./components/ContactModal"
 
 const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <>
-      <Nav />
+      <Nav setIsModalOpen={setIsModalOpen} />
       <ReactFullpage
         scrollingSpeed={700} // Adjust for smoother/faster scroll; 700ms feels natural
         navigation={false} // Optional: Set to true if you want side navigation dots
@@ -22,7 +25,7 @@ const App = () => {
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper>
             <div className="section">
-              <Landing />
+              <Landing setIsModalOpen={setIsModalOpen} />
             </div>
             <div className="section">
               <About />
@@ -34,17 +37,18 @@ const App = () => {
               <Templates />
             </div>
             <div className="section">
-              <Pricing />
+              <Pricing setIsModalOpen={setIsModalOpen} />
             </div>
             <div className="section">
               <FAQs />
             </div>
             <div className="section">
-              <Footer />
+              <Footer setIsModalOpen={setIsModalOpen} />
             </div>
           </ReactFullpage.Wrapper>
         )}
       />
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }

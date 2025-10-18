@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../ui/Header';
 import avatar from '../assests/images/FaqsAvatar.png'
+import avatar2 from '../assests/images/FaqsAvatar2.png'
 const FAQs = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -42,7 +43,8 @@ const FAQs = () => {
                     Got questions before kicking things off? I've got you covered.
                 </p>
                 <div className='flex flex-col gap-4 mx-auto relative max-w-[1200px]'>
-                    <img src={avatar} alt="avatar" className='absolute top-0 right-0 translate-y-[-100%] w-[112px]' />
+                    <img src={avatar} alt="avatar" className={`absolute top-0 right-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex !== null ? 'opacity-0' : ''}`} />
+                    <img src={avatar2} alt="avatar" className={`absolute top-0 left-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex === null ? 'opacity-0' : ''}`} />
                     <span className='absolute w-[50%] h-[50%] rounded-full bg-[#41a4c57e] blur-[200px] top-[50%] left-[75%] translate-x-[-50%] translate-y-[-50%] z-[-1]' />
                     {faqs.map((faq, index) => (
                         <button key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>

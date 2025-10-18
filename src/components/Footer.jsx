@@ -2,7 +2,7 @@ import React from 'react'
 import bg from '../assests/images/footerbg.jpg'
 import avatar from '../assests/images/footerAvatar.png'
 import MainBtn from '../ui/MainBtn'
-const Footer = () => {
+const Footer = ({ setIsModalOpen = () => { } }) => {
     return (
         <section className='content-contain pt-[100px]'>
             <div className='p-[100px] filter-blur-2 rounded-[24px] relative overflow-hidden flex gap-5 max-w-[1200px] mx-auto mb-[60px]'>
@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className='flex flex-col gap-6'>
                     <h1 className='font-bold text-[58px] leading-[70px]'>Ready to bring your dream project to life?</h1>
                     <p className='text-[24px]'>Let's transform your ideas into stunning reality. Contact me today, and let's build something remarkable together</p>
-                    <MainBtn text="let's talk" handler={() => { }} classNames={'text-[18px] font-bold max-w-[280px]'} />
+                    <MainBtn text="let's talk" handler={() => setIsModalOpen(true)} classNames={'text-[18px] font-bold max-w-[280px]'} />
                 </div>
                 <div>
                     <img src={avatar} alt="avatar" className='min-w-[380px]' />

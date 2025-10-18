@@ -1,8 +1,48 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useInView, animate } from 'framer-motion'
 import Header from '../ui/Header'
 import web from '../assests/images/web.png'
 import avatar from '../assests/images/AboutAvatar.png'
+
+const AnimatedNumber = ({ target, start }) => {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        if (start) {
+            const controls = animate(0, target, {
+                duration: 2,
+                ease: 'easeOut',
+                onUpdate: (latest) => {
+                    if (ref.current) {
+                        ref.current.textContent = Math.floor(latest) + '+';
+                    }
+                }
+            });
+            return () => controls.stop();
+        }
+    }, [start, target]);
+
+    return (
+        <div
+            className='text-[96px] leading-[132px] font-bold bg-gradient-to-r from-[#00BFFF] to-[#105871] bg-clip-text text-transparent'
+            ref={ref}
+        >
+            0+
+        </div>
+    );
+};
+
 const About = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
+    const [start, setStart] = useState(false);
+
+    useEffect(() => {
+        if (isInView) {
+            setStart(true);
+        }
+    }, [isInView]);
+
     return (
         <section className='content-contain pt-[100px]'>
             <img src={web} alt="web" className='absolute rotate-180 left-0 bottom-0 z-[-1]' />
@@ -23,27 +63,21 @@ const About = () => {
                         I truly believe every business deserves a great online presence, and I'm here to help yours win hearts (and clicks)."
                     </p>
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div ref={ref} className='flex flex-col gap-2'>
                     <div className='flex gap-[50px] items-center justify-between'>
-                        <div className='text-[96px] leading-[132px] font-bold bg-gradient-to-r from-[#00BFFF] to-[#105871] bg-clip-text text-transparent'>
-                            6+
-                        </div>
+                        <AnimatedNumber target={6} start={start} />
                         <div className='text-[32px] leading-[27px] opacity-70 text-nowrap text-right flex-1'>
                             Years of exp
                         </div>
                     </div>
                     <div className='flex gap-[50px] items-center'>
-                        <div className='text-[96px] leading-[132px] font-bold bg-gradient-to-r from-[#00BFFF] to-[#105871] bg-clip-text text-transparent'>
-                            150+
-                        </div>
+                        <AnimatedNumber target={150} start={start} />
                         <div className='text-[32px] leading-[27px] opacity-70 text-nowrap text-right flex-1'>
                             Projects
                         </div>
                     </div>
                     <div className='flex gap-[50px] items-center'>
-                        <div className='text-[96px] leading-[132px] font-bold bg-gradient-to-r from-[#00BFFF] to-[#105871] bg-clip-text text-transparent'>
-                            340+
-                        </div>
+                        <AnimatedNumber target={340} start={start} />
                         <div className='text-[32px] leading-[27px] opacity-70 text-nowrap text-right flex-1'>
                             Templates
                         </div>
