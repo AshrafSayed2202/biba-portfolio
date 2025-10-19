@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from '../ui/Header';
 import avatar from '../assests/images/FaqsAvatar.png'
 import avatar2 from '../assests/images/FaqsAvatar2.png'
+import { motion } from 'framer-motion'
+
 const FAQs = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -36,18 +38,40 @@ const FAQs = () => {
         <section className='bg-[#020F15] w-screen flex justify-center !overflow-visible max-h-screen'>
             <div className='content-contain py-[100px]'>
                 <Header title={'Frequently Asked Questions'} />
-                <h3 className='text-[42px] font-[500] leading-[42px] text-center mb-[15px]'>
-                    Your Top <span>Questions</span> answered.
-                </h3>
-                <p className='text-[16px] font-[400] text-[#C4C4C4] text-center mb-[30px]'>
+                <motion.h3
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    viewport={{ once: true }}
+                    className='text-[42px] font-[500] leading-[42px] text-center mb-[15px]'>
+                    Your Top <span className='instrument-serif-regular-italic'>Questions</span> answered.
+                </motion.h3>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                    viewport={{ once: true }}
+                    className='text-[16px] font-[400] text-[#C4C4C4] text-center mb-[30px]'>
                     Got questions before kicking things off? I've got you covered.
-                </p>
+                </motion.p>
                 <div className='flex flex-col gap-4 mx-auto relative max-w-[1200px]'>
-                    <img src={avatar} alt="avatar" className={`absolute top-0 right-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex !== null ? 'opacity-0' : ''}`} />
-                    <img src={avatar2} alt="avatar" className={`absolute top-0 left-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex === null ? 'opacity-0' : ''}`} />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <img src={avatar} alt="avatar" className={`absolute top-0 right-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex !== null ? 'opacity-0' : ''}`} />
+                        <img src={avatar2} alt="avatar" className={`absolute top-0 left-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex === null ? 'opacity-0' : ''}`} />
+                    </motion.div>
                     <span className='absolute w-[50%] h-[50%] rounded-full bg-[#41a4c57e] blur-[200px] top-[50%] left-[75%] translate-x-[-50%] translate-y-[-50%] z-[-1]' />
                     {faqs.map((faq, index) => (
-                        <button key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
+                        <motion.button
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, delay: (index + 1) * 0.2 }}
+                            viewport={{ once: true }}
+                            key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
                             <div
                                 className='flex justify-between items-center w-full text-left'
                             >
@@ -61,7 +85,7 @@ const FAQs = () => {
                                     {faq.answer}
                                 </div>
                             )}
-                        </button>
+                        </motion.button>
                     ))}
                 </div>
             </div>

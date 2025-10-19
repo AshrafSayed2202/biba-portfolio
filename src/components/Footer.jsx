@@ -2,10 +2,17 @@ import React from 'react'
 import bg from '../assests/images/footerbg.jpg'
 import avatar from '../assests/images/footerAvatar.png'
 import MainBtn from '../ui/MainBtn'
+import { motion } from 'framer-motion'
+
 const Footer = ({ setIsModalOpen = () => { } }) => {
     return (
         <section className='content-contain pt-[100px]'>
-            <div className='p-[100px] filter-blur-2 rounded-[24px] relative overflow-hidden flex gap-5 max-w-[1200px] mx-auto mb-[60px]'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                viewport={{ once: true }}
+                className='p-[100px] filter-blur-2 rounded-[24px] relative overflow-hidden flex gap-5 max-w-[1200px] mx-auto mb-[60px]'>
                 <img src={bg} alt="bg" className='absolute left-0 top-0 z-[-1] rounded-[24px] h-full object-cover' />
                 <div className='absolute left-0 top-0 z-[-1] rounded-[24px] size-full object-cover shadow-[0_0_28px_2px_rgba(255,255,255,0.20)_inset]' />
                 <div className='flex flex-col gap-6'>
@@ -16,12 +23,27 @@ const Footer = ({ setIsModalOpen = () => { } }) => {
                 <div>
                     <img src={avatar} alt="avatar" className='min-w-[380px]' />
                 </div>
-            </div>
+            </motion.div>
             <div className='max-w-[1200px] mx-auto py-4 px-10 text-[#626262] flex justify-between items-center '>
-                <span>Habiba© 2025 .All Rights Reserved</span>
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.7, delay: 1 }}
+                    viewport={{ once: true }}
+                >Habiba© 2025 .All Rights Reserved</motion.span>
                 <div className='flex items-center gap-5 font-bold'>
-                    <a href="" className='hover:text-[#1A91B9] duration-300'>LinkedIn</a>
-                    <a href="" className='hover:text-[#1A91B9] duration-300'>Behance</a>
+                    <motion.a
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.3 }}
+                        viewport={{ once: true }}
+                        href="https://www.linkedin.com/" className='hover:text-[#1A91B9] duration-300'>LinkedIn</motion.a>
+                    <motion.a
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.6 }}
+                        viewport={{ once: true }}
+                        href="https://www.behance.net/" className='hover:text-[#1A91B9] duration-300'>Behance</motion.a>
                 </div>
             </div>
         </section>
