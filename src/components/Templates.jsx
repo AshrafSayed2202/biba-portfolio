@@ -6,27 +6,27 @@ import { motion } from 'framer-motion'
 
 const Templates = () => {
     return (
-        <section className='relative w-screen min-h-screen' >
-            <div className='content-contain pt-[100px]'>
+        <section className='relative w-screen sm:min-h-screen flex justify-center items-center' >
+            <div className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px] !h-[500px]'>
                 <Header title={"Templates"} />
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.5 }}
                     viewport={{ once: true }}
-                    className='text-[16px] font-[400] text-[#C4C4C4] text-center'>COMING SOON</motion.p>
+                    className='text-[14px] sm:text-[15px] md:text-[16px] font-[400] text-[#C4C4C4] text-center'>COMING SOON</motion.p>
                 <motion.img
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1.3, delay: 1.7 }}
                     viewport={{ once: true }}
-                    src={avatar} alt="Avatar" className='h-[480px] mx-auto' />
+                    src={avatar} alt="Avatar" className='h-[300px] sm:h-[400px] md:h-[480px] mx-auto' />
                 <motion.img
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1.3, delay: 1.7 }}
                     viewport={{ once: true }}
-                    src={cubes} alt="Cubes" className='absolute left-[5%] top-[5%] z-[-1] w-[40%] rotate-[-152deg]' />
+                    src={cubes} alt="Cubes" className='absolute left-[5%] top-[5%] z-[-1] w-[60%] sm:w-[50%] md:w-[40%] rotate-[-152deg]' />
             </div>
         </section>
     )

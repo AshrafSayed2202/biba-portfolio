@@ -7,8 +7,18 @@ body {
   scroll-behavior: smooth;
   background-color: #090909;
   color: #ffffff;
+  overflow-x: hidden !important;
+  scrollbar-width: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
 }
 
+body::-webkit-scrollbar,
+html::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 .content-contain {
   margin-left: auto;
   margin-right: auto;
@@ -95,12 +105,20 @@ body {
   backdrop-filter: blur(8px);
 }
 
-section {
-  min-height: calc(100dvh - 150px);
+section,
+.section {
+  min-height: calc(100dvh);
   max-height: 100dvh;
   overflow: hidden;
 }
-
+@media (width < 991px) {
+  section,
+  .section {
+    height: auto;
+    max-height: unset;
+    overflow: visible;
+  }
+}
 .fp-watermark {
   display: none !important;
 }

@@ -35,15 +35,15 @@ const FAQs = () => {
         },
     ];
     return (
-        <section className='bg-[#020F15] w-screen flex justify-center !overflow-visible max-h-screen'>
-            <div className='content-contain py-[100px]'>
+        <section className='bg-[#020F15] w-screen flex justify-center !overflow-visible'>
+            <div className='content-contain py-[60px] sm:py-[80px] md:py-[100px]'>
                 <Header title={'Frequently Asked Questions'} />
                 <motion.h3
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
                     viewport={{ once: true }}
-                    className='text-[42px] font-[500] leading-[42px] text-center mb-[15px]'>
+                    className='text-[28px] sm:text-[34px] md:text-[42px] font-[500] leading-[28px] sm:leading-[34px] md:leading-[42px] text-center mb-[15px]'>
                     Your Top <span className='instrument-serif-regular-italic'>Questions</span> answered.
                 </motion.h3>
                 <motion.p
@@ -51,18 +51,18 @@ const FAQs = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.5 }}
                     viewport={{ once: true }}
-                    className='text-[16px] font-[400] text-[#C4C4C4] text-center mb-[30px]'>
+                    className='text-[14px] sm:text-[15px] md:text-[16px] font-[400] text-[#C4C4C4] text-center mb-[100px] sm:mb-[25px] md:mb-[30px]'>
                     Got questions before kicking things off? I've got you covered.
                 </motion.p>
-                <div className='flex flex-col gap-4 mx-auto relative max-w-[1200px]'>
+                <div className='flex flex-col gap-4 mx-auto relative max-w-[800px] sm:max-w-[1000px] md:max-w-[1200px]'>
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.8 }}
                         viewport={{ once: true }}
                     >
-                        <img src={avatar} alt="avatar" className={`absolute top-0 right-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex !== null ? 'opacity-0' : ''}`} />
-                        <img src={avatar2} alt="avatar" className={`absolute top-0 left-0 translate-y-[-100%] duration-300 w-[112px] ${activeIndex === null ? 'opacity-0' : ''}`} />
+                        <img src={avatar} alt="avatar" className={`absolute top-0 right-0 translate-y-[-100%] duration-300 w-[80px] sm:w-[96px] md:w-[112px] ${activeIndex !== null ? 'opacity-0' : ''}`} />
+                        <img src={avatar2} alt="avatar" className={`absolute top-0 left-0 translate-y-[-100%] duration-300 w-[80px] sm:w-[96px] md:w-[112px] ${activeIndex === null ? 'opacity-0' : ''}`} />
                     </motion.div>
                     <span className='absolute w-[50%] h-[50%] rounded-full bg-[#41a4c57e] blur-[200px] top-[50%] left-[75%] translate-x-[-50%] translate-y-[-50%] z-[-1]' />
                     {faqs.map((faq, index) => (
@@ -71,17 +71,17 @@ const FAQs = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: (index + 1) * 0.2 }}
                             viewport={{ once: true }}
-                            key={index} className='border rounded-[24px] border-[#ffffff1a] py-[18px] px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
+                            key={index} className='border rounded-[16px] sm:rounded-[20px] md:rounded-[24px] border-[#ffffff1a] py-[12px] sm:py-[15px] md:py-[18px] px-[14px] sm:px-[18px] md:px-[20px] bg-[#ffffff0a] filter-blur-8' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
                             <div
                                 className='flex justify-between items-center w-full text-left'
                             >
-                                <span className='text-[18px] font-[500]'>{faq.question}</span>
-                                <span className='text-[24px] font-[300]'>
+                                <span className='text-[14px] sm:text-[16px] md:text-[18px] font-[500]'>{faq.question}</span>
+                                <span className='text-[18px] sm:text-[20px] md:text-[24px] font-[300]'>
                                     {activeIndex === index ? '-' : '+'}
                                 </span>
                             </div>
                             {activeIndex === index && (
-                                <div className='pb-4 text-[16px] font-[400] text-[#ffffffcc] text-left mt-[28px]'>
+                                <div className='pb-4 text-[14px] sm:text-[15px] md:text-[16px] font-[400] text-[#ffffffcc] text-left mt-[18px] sm:mt-[24px] md:mt-[28px]'>
                                     {faq.answer}
                                 </div>
                             )}
