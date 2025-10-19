@@ -37,13 +37,13 @@ const Footer = ({ setIsModalOpen = () => { } }) => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.3 }}
                         viewport={{ once: true }}
-                        href="https://www.linkedin.com/" className='hover:text-[#1A91B9] duration-300'>LinkedIn</motion.a>
+                        href="https://www.linkedin.com/in/habiba-ehab-ux-designer" target='_blank' className='hover:text-[#1A91B9] duration-300'>LinkedIn</motion.a>
                     <motion.a
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.6 }}
                         viewport={{ once: true }}
-                        href="https://www.behance.net/" className='hover:text-[#1A91B9] duration-300'>Behance</motion.a>
+                        href="https://www.behance.net/he45" target='_blank' className='hover:text-[#1A91B9] duration-300'>Behance</motion.a>
                 </div>
             </div>
         </section>

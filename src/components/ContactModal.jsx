@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MainBtn from '../ui/MainBtn';
 import { motion } from 'framer-motion';
+import Avatar from '../assests/images/contactAvatar.png'
 const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = "Have questions or need A solutions? Let us know by filling out the form, and we'll be in touch!" }) => {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -25,7 +26,7 @@ const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = 
         setStatus('Submitting...');
 
         try {
-            const response = await fetch('https://formspree.io/f/xnqelrkz', {
+            const response = await fetch('https://formspree.io/f/mdkzrzpo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,9 +73,12 @@ const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = 
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label htmlFor="firstName" className='mb-2 block'>
-                                First Name
-                                <span className='text-red-500'> *</span>
+                            <label htmlFor="firstName" className='mb-2 flex justify-between items-end relative'>
+                                <div>
+                                    First Name
+                                    <span className='text-red-500'> *</span>
+                                </div>
+                                <img src={Avatar} alt="Avatar" className='absolute right-[25%]' />
                             </label>
                             <input
                                 type="text"
