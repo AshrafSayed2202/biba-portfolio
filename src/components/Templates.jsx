@@ -6,7 +6,8 @@ import { motion } from 'framer-motion'
 
 const Templates = () => {
     return (
-        <section className='relative w-screen sm:min-h-screen flex justify-center items-center' >
+        <section className='relative w-screen sm:min-h-screen flex justify-center items-center'
+            style={{ height: 'auto', minHeight: 'unset' }} >
             <div className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px] !h-[500px]'>
                 <Header title={"Templates"} />
                 <motion.p
@@ -26,7 +27,7 @@ const Templates = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1.3, delay: 1.7 }}
                     viewport={{ once: true }}
-                    src={cubes} alt="Cubes" className='absolute left-[5%] top-[5%] z-[-1] w-[60%] sm:w-[50%] md:w-[40%] rotate-[-152deg]' />
+                    src={cubes} alt="Cubes" className='hidden sm:block absolute left-[0%] top-[30%] w-[40%] sm:w-[50%] md:w-[40%] rotate-[-152deg]' />
             </div>
         </section>
     )

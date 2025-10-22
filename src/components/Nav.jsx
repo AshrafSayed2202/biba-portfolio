@@ -27,25 +27,25 @@ const Nav = ({ setIsModalOpen = () => { } }) => {
             >
                 <div className="flex gap-[20px] sm:gap-[60px] md:gap-[90px] items-center ml-[10px] sm:ml-[15px] md:ml-[22px]">
                     <span className="text-[20px] sm:text-[24px] md:text-[28px] chewy-regular">Habiba</span>
-                    <ul className="hidden md:flex gap-[20px] sm:gap-[30px] md:gap-[40px] items-center text-[14px] sm:text-[16px] md:text-[18px] text-[#E4E4E4]">
-                        <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
-                            <a href="#landing">Home</a>
-                        </li>
-                        <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
-                            <a href="#about">About</a>
-                        </li>
-                        <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
-                            <a href="#services">Services</a>
-                        </li>
-                        <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
-                            <a href="#pricing">Pricing</a>
-                        </li>
-                        <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
-                            <a href="#faqs">FAQ</a>
-                        </li>
-                    </ul>
                 </div>
-                <div className="flex items-center mr-[10px] sm:mr-[15px] md:mr-[22px]">
+                <ul className="hidden md:flex gap-[20px] sm:gap-[30px] md:gap-[40px] items-center text-[14px] sm:text-[16px] md:text-[18px] text-[#E4E4E4]">
+                    <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
+                        <a href="#landing">Home</a>
+                    </li>
+                    <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
+                        <a href="#about">About</a>
+                    </li>
+                    <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
+                        <a href="#services">Services</a>
+                    </li>
+                    <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
+                        <a href="#pricing">Pricing</a>
+                    </li>
+                    <li className="hover:scale-[1.1] duration-300 hover:text-[#41A4C5]">
+                        <a href="#faqs">FAQ</a>
+                    </li>
+                </ul>
+                <div className="flex items-center">
                     <MainBtn
                         text="CONTACT US"
                         classNames={'hidden md:block !px-[20px] sm:!px-[25px] md:!px-[33px] !py-[10px] sm:!py-[12px] md:!py-[16px] !text-[12px] sm:!text-[14px] md:!text-[15px]'}

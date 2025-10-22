@@ -53,7 +53,7 @@ const About = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.7, delay: 1.5 }}
                     viewport={{ once: true }}
-                    src={avatar} alt="avatar" className='w-[80px] sm:w-[96px] md:w-[112px]'
+                    src={avatar} alt="avatar" className='w-[60px] sm:w-[96px] md:w-[112px]'
                 />
             </div>
             <div className='flex flex-col md:flex-row gap-5 mt-[40px] sm:mt-[60px] md:mt-[80px]'>
@@ -63,7 +63,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
                         viewport={{ once: true }}
-                        className='text-[30px] sm:text-[40px] md:text-[50px] font-[500] leading-[33px] sm:leading-[44px] md:leading-[55px]'>
+                        className='text-[20px] sm:text-[40px] md:text-[50px] font-[500] leading-[33px] sm:leading-[44px] md:leading-[55px]'>
                         Hey there! I'm Habiba -Your creative <br />
                         UI/UX Designer and  Framer Developer.
                     </motion.h3>
@@ -72,7 +72,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 1 }}
                         viewport={{ once: true }}
-                        className='text-[16px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] opacity-80 max-w-[90%] md:max-w-[80%]'>
+                        className='text-[14px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] opacity-80 max-w-[90%] md:max-w-[80%]'>
                         Let's face it, traditional web design is exhausting pricey, confusing, and painfully slow. That's why I've dedicated myself to making stunning, professional websites easy and accessible for everyone. No jargon, no headaches just clean, impactful designs that help your brand confidently stand out.
                     </motion.p>
                     <motion.p
@@ -80,7 +80,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 1.5 }}
                         viewport={{ once: true }}
-                        className='text-[16px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] opacity-80 max-w-[90%] md:max-w-[80%]'>
+                        className='text-[14px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] opacity-80 max-w-[90%] md:max-w-[80%]'>
                         I truly believe every business deserves a great online presence, and I'm here to help yours win hearts (and clicks)."
                     </motion.p>
                 </div>

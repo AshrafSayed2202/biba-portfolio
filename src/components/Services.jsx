@@ -21,7 +21,7 @@ const Services = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
                     viewport={{ once: true }}
-                    className='text-[28px] sm:text-[34px] md:text-[42px] font-[500] leading-[28px] sm:leading-[34px] md:leading-[42px] text-center mb-[15px]'>
+                    className='text-[20px] sm:text-[34px] md:text-[42px] font-[500] leading-[28px] sm:leading-[34px] md:leading-[42px] text-center mb-[15px]'>
                     Congrats—you've found a design partner <br />
                     ready to supercharge your brand.
                 </motion.h3>
@@ -30,16 +30,16 @@ const Services = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.5 }}
                     viewport={{ once: true }}
-                    className='text-[16px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] max-w-[600px] sm:max-w-[700px] md:max-w-[800px] mx-auto opacity-80 text-center'>
+                    className='text-[14px] sm:text-[18px] md:text-[20px] font-[400] leading-[22px] sm:leading-[24px] md:leading-[27px] max-w-[600px] sm:max-w-[700px] md:max-w-[800px] mx-auto opacity-80 text-center'>
                     Curious how I'll help your business thrive online? Here's a peek at my creative toolkit. From sleek websites to standout apps, I've got all your UX/UI needs covered."
                 </motion.p>
-                <div className='mt-[100px] sm:mt-[30px] md:mt-[40px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-[60px] sm:pb-[70px] md:pb-[80px] relative'>
+                <div className='sm:mt-[30px] md:mt-[40px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-[60px] sm:pb-[70px] md:pb-[80px] relative'>
                     <motion.img
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.5 }}
                         viewport={{ once: true }}
-                        src={avatar} alt="avatar" className='absolute top-0 left-0 translate-y-[-100%] w-[80px] sm:w-[96px] md:w-[112px]' />
+                        src={avatar} alt="avatar" className='relative sm:absolute top-0 left-0 mx-auto mt-[6] sm:mt-0 sm:translate-y-[-100%] w-[112px]' />
                     {services.map((service, index) =>
                         <ServiceCard
                             delayKey={index} key={index} title={service.title} description={service.description} />

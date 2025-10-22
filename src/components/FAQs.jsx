@@ -43,7 +43,7 @@ const FAQs = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
                     viewport={{ once: true }}
-                    className='text-[28px] sm:text-[34px] md:text-[42px] font-[500] leading-[28px] sm:leading-[34px] md:leading-[42px] text-center mb-[15px]'>
+                    className='text-[20px] sm:text-[34px] md:text-[42px] font-[500] leading-[28px] sm:leading-[34px] md:leading-[42px] text-center mb-[15px]'>
                     Your Top <span className='instrument-serif-regular-italic'>Questions</span> answered.
                 </motion.h3>
                 <motion.p

@@ -16,12 +16,12 @@ const Footer = ({ setIsModalOpen = () => { } }) => {
                 <img src={bg} alt="bg" className='absolute left-0 top-0 z-[-1] rounded-[24px] w-full h-full object-cover' />
                 <div className='absolute left-0 top-0 z-[-1] rounded-[24px] size-full object-cover shadow-[0_0_28px_2px_rgba(255,255,255,0.20)_inset]' />
                 <div className='flex flex-col gap-6'>
-                    <h1 className='font-bold text-[36px] sm:text-[46px] md:text-[58px] leading-[44px] sm:leading-[56px] md:leading-[70px]'>Ready to bring your dream project to life?</h1>
-                    <p className='text-[18px] sm:text-[20px] md:text-[24px]'>Let's transform your ideas into stunning reality. Contact me today, and let's build something remarkable together</p>
+                    <h1 className='font-bold text-[32px] sm:text-[46px] md:text-[58px] leading-[44px] sm:leading-[56px] md:leading-[70px]'>Ready to bring your dream project to life?</h1>
+                    <p className='text-[16px] sm:text-[20px] md:text-[24px]'>Let's transform your ideas into stunning reality. Contact me today, and let's build something remarkable together</p>
                     <MainBtn text="let's talk" handler={() => setIsModalOpen(true)} classNames={'text-[14px] sm:text-[16px] md:text-[18px] font-bold max-w-[280px]'} />
                 </div>
                 <div>
-                    <img src={avatar} alt="avatar" className='max-w-[240px] sm:max-w-[300px] md:max-w-[380px] w-full' />
+                    <img src={avatar} alt="avatar" className='max-w-[240px] sm:max-w-[300px] md:max-w-[380px] w-full mx-auto sm:mx-0' />
                 </div>
             </motion.div>
             <div className='max-w-[1200px] mx-auto py-4 px-4 sm:px-6 md:px-10 text-[#626262] flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0'>

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import MainBtn from '../ui/MainBtn';
 import { motion } from 'framer-motion';
 import Avatar from '../assests/images/contactAvatar.png'
-const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = "Have questions or need A solutions? Let us know by filling out the form, and we'll be in touch!" }) => {
+const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = "Have questions or need A solutions? Let us know by filling out the form, and we'll be in touch!", defaultSelect = '' }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         phone: '',
         email: '',
-        plan: '',
+        plan: defaultSelect,
         message: '',
     });
 
@@ -160,9 +160,10 @@ const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = 
                             required
                         >
                             <option value="" className='bg-[#000000]'>--select a plan--</option>
-                            <option value="basic" className='bg-[#000000]'>Basic</option>
-                            <option value="premium" className='bg-[#000000]'>Premium</option>
-                            <option value="enterprise" className='bg-[#000000]'>Enterprise</option>
+                            <option value="custom" className='bg-[#000000]'>Custom</option>
+                            <option value="mentorship-plan" className='bg-[#000000]'>Mentorship Plan</option>
+                            <option value="part-time" className='bg-[#000000]'>Part Time</option>
+                            <option value="full-time" className='bg-[#000000]'>Full Time</option>
                         </select>
                     </div>
                     <div className="mb-4">
