@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MainBtn from '../ui/MainBtn';
 import { motion } from 'framer-motion';
 import Avatar from '../assests/images/contactAvatar.png'
+
 const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = "Have questions or need A solutions? Let us know by filling out the form, and we'll be in touch!", defaultSelect = '' }) => {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -44,7 +45,7 @@ const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = 
                     plan: '',
                     message: '',
                 });
-                setTimeout(onClose, 2000); // Close modal after 2 seconds
+                setTimeout(onClose, 2000);
             } else {
                 setStatus('Error submitting form. Please try again.');
             }
@@ -54,136 +55,132 @@ const ContactModal = ({ isOpen, onClose, title = "Get in touch with us", text = 
     };
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 px-4 sm:px-6 lg:px-8">
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="bg-[#000000] p-8 rounded-lg border border-[#474747] shadow-lg max-w-[80vw] w-[650px] relative"
+                className="bg-[#000000] p-4 sm:p-6 lg:p-8 rounded-lg border border-[#474747] shadow-lg w-full max-w-[90vw] sm:max-w-[80vw] lg:max-w-[650px] relative"
             >
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-2 size-6 text-[24px] flex justify-center items-center text-gray-500 hover:text-gray-700"
+                    className="absolute top-2 right-2 size-6 text-[20px] sm:text-[24px] flex justify-center items-center text-gray-500 hover:text-gray-700"
                 >
                     &times;
                 </button>
-                <h2 className="text-[50px] font-bold mb-4">{title}</h2>
-                <p className="mb-[70px] text-[#ccc] text-[18px]">{text}</p>
+                <h2 className="text-2xl sm:text-3xl lg:text-[50px] font-bold mb-4 text-center sm:text-left">{title}</h2>
+                <p className="mb-6 sm:mb-10 lg:mb-[70px] text-[#ccc] text-sm sm:text-base lg:text-[18px] text-center sm:text-left">{text}</p>
                 <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label htmlFor="firstName" className='mb-2 flex justify-between items-end relative'>
-                                <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4">
+                        <div className="relative">
+                            <label htmlFor="firstName" className="mb-2 flex justify-between items-end">
+                                <div className="text-sm sm:text-base">
                                     First Name
-                                    <span className='text-red-500'> *</span>
+                                    <span className="text-red-500"> *</span>
                                 </div>
-                                <img src={Avatar} alt="Avatar" className='absolute right-[25%]' />
+                                <img src={Avatar} alt="Avatar" className="absolute right-0 sm:right-[25%] hidden sm:block" />
                             </label>
                             <input
                                 type="text"
                                 name="firstName"
-                                id='firstName'
+                                id="firstName"
                                 placeholder="John"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent"
+                                className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent text-sm sm:text-base"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="lastName" className='mb-2 block'>
+                            <label htmlFor="lastName" className="mb-2 block text-sm sm:text-base">
                                 Last Name
-                                <span className='text-red-500'> *</span>
+                                <span className="text-red-500"> *</span>
                             </label>
                             <input
                                 type="text"
                                 name="lastName"
-                                id='lastName'
+                                id="lastName"
                                 placeholder="Doe"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent"
+                                className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent text-sm sm:text-base"
                                 required
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4">
                         <div>
-                            <label htmlFor="phone" className='mb-2 block'>
+                            <label htmlFor="phone" className="mb-2 block text-sm sm:text-base">
                                 Phone Number
-                                <span className='text-red-500'> *</span>
+                                <span className="text-red-500"> *</span>
                             </label>
                             <input
                                 type="tel"
                                 name="phone"
-                                id='phone'
+                                id="phone"
                                 placeholder="123456789"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent"
-
+                                className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent text-sm sm:text-base"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className='mb-2 block'>
+                            <label htmlFor="email" className="mb-2 block text-sm sm:text-base">
                                 Email
-                                <span className='text-red-500'> *</span>
+                                <span className="text-red-500"> *</span>
                             </label>
                             <input
                                 type="email"
                                 name="email"
-                                id='email'
+                                id="email"
                                 placeholder="habiba@example.com"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent"
+                                className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent text-sm sm:text-base"
                                 required
                             />
                         </div>
                     </div>
                     <div className="mb-4">
-
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="plan" className='mb-2 block'>
+                        <label htmlFor="plan" className="mb-2 block text-sm sm:text-base">
                             Choose a Plan
-                            <span className='text-red-500'> *</span>
+                            <span className="text-red-500"> *</span>
                         </label>
                         <select
                             name="plan"
-                            id='plan'
+                            id="plan"
                             value={formData.plan}
                             onChange={handleChange}
-                            className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent"
+                            className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent text-sm sm:text-base"
                             required
                         >
-                            <option value="" className='bg-[#000000]'>--select a plan--</option>
-                            <option value="custom" className='bg-[#000000]'>Custom</option>
-                            <option value="mentorship-plan" className='bg-[#000000]'>Mentorship Plan</option>
-                            <option value="part-time" className='bg-[#000000]'>Part Time</option>
-                            <option value="full-time" className='bg-[#000000]'>Full Time</option>
+                            <option value="" className="bg-[#000000]">--select a plan--</option>
+                            <option value="custom" className="bg-[#000000]">Custom</option>
+                            <option value="mentorship-plan" className="bg-[#000000]">Mentorship Plan</option>
+                            <option value="part-time" className="bg-[#000000]">Part Time</option>
+                            <option value="full-time" className="bg-[#000000]">Full Time</option>
                         </select>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="message" className='mb-2 block'>
+                        <label htmlFor="message" className="mb-2 block text-sm sm:text-base">
                             How can we help?
-                            <span className='text-red-500'> *</span>
+                            <span className="text-red-500"> *</span>
                         </label>
                         <textarea
                             name="message"
-                            id='message'
+                            id="message"
                             placeholder="You can write what you want to help you here ..."
                             value={formData.message}
                             onChange={handleChange}
-                            className="px-4 py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent h-32"
+                            className="px-3 sm:px-4 py-2 sm:py-3 border border-[#414141] rounded-lg w-full outline-none bg-transparent h-24 sm:h-32 text-sm sm:text-base"
                             required
                         />
                     </div>
-                    <MainBtn text="Let's Talk" handler={handleSubmit} theme="blue" classNames={'!w-full'} />
+                    <MainBtn text="Let's Talk" handler={handleSubmit} theme="blue" classNames="w-full" />
                 </form>
-                {status && <p className="mt-4 text-center">{status}</p>}
+                {status && <p className="mt-4 text-center text-sm sm:text-base">{status}</p>}
             </motion.div>
         </div>
     );
