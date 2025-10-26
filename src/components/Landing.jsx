@@ -11,7 +11,7 @@ const Landing = ({ setIsModalOpen }) => {
     return (
         <section className='!max-h-screen !overflow-hidden relative'>
             <div className='content-contain pt-[100px] min-h-screen flex flex-col justify-end sm:justify-start'>
-                <img src={web} alt="web" className='absolute left-0 top-0 z-[-1] w-full h-auto' />
+                <img src={web} alt="web" className='absolute left-0 top-0 z-[1] w-full h-auto' />
                 <Header title={<p>Design that's simply <br /> out of this world.</p>} classNames='!text-[36px] sm:!text-[60px] md:!text-[82px] leading-[42px] sm:leading-[62px] md:leading-[84px] font-[500] text-wrap mb-4' />
                 <motion.p
                     initial={{ opacity: 0 }}

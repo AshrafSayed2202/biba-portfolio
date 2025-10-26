@@ -8,7 +8,7 @@ const Templates = () => {
     return (
         <section className='relative w-screen sm:min-h-screen flex justify-center items-center'
             style={{ height: 'auto', minHeight: 'unset' }} >
-            <div className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px] !h-[500px]'>
+            <div className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px] !h-[500px] sm:!h-screen'>
                 <Header title={"Templates"} />
                 <motion.p
                     initial={{ opacity: 0 }}

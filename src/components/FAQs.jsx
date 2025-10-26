@@ -35,7 +35,7 @@ const FAQs = () => {
         },
     ];
     return (
-        <section className='bg-[#020F15] w-screen flex justify-center !overflow-visible'>
+        <section className='bg-[#020F15] w-screen flex justify-center items-center !overflow-visible'>
             <div className='content-contain py-[60px] sm:py-[80px] md:py-[100px]'>
                 <Header title={'Frequently Asked Questions'} />
                 <motion.h3

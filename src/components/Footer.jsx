@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 const Footer = ({ setIsModalOpen = () => { } }) => {
     return (
-        <section className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px]'>
+        <section className='content-contain pt-[60px] sm:pt-[80px] md:pt-[100px] !h-auto !min-h-0' style={{ minHeight: 'unset' }}>
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

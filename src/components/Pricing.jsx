@@ -44,7 +44,7 @@ const Pricing = ({ setIsModalOpen = () => { } }) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.8 }}
                 viewport={{ once: true }}
-                className='grid grid-cols-1 sm:grid-cols-4 gap-[20px] sm:gap-[30px] md:gap-[36px] mt-[20px] sm:mt-[30px] md:mt-[40px] pb-[60px] sm:pb-[80px] md:pb-[100px] relative'>
+                className='grid grid-cols-1 sm:grid-cols-4 gap-[20px] sm:gap-0 mt-[20px] sm:mt-[30px] md:mt-[40px] pb-[60px] sm:pb-[80px] md:pb-[100px] relative'>
                 {prices.map((item, index) => <PricingCard setIsModalOpen={setIsModalOpen} key={index} {...item} />)}
                 <motion.span
                     initial={{ opacity: 0 }}
